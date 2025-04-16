@@ -1,0 +1,41 @@
+<!-- <p>product-detail works!</p> -->
+ 
+ <!-- <nav class="navbar bg-dark">
+<div class="container-fluid">
+    <a class="navbar-brand " style="color:white ; ">E-commerce Website</a>
+    <button  routerLink="/" class="btn btn-warning text-light">Back</button>
+</div>
+ </nav> -->
+
+ <!-- single product display -->
+  <div class="container" style="background-color:whitesmoke;">
+   <div style="background-color:whitesmoke;"> <button  routerLink="/" class="btn btn-warning text-light">Back</button></div>
+    <div class="row product-detail">
+        <div class="col-sm-3">
+            <img class="product-img" style="background-color: whitesmoke;" src="{{productdata?.images[0]}}">
+        <div style="background-color: whitesmoke;">
+            <button class="btn btn-primary" style="margin: right;"> &nbsp; &nbsp;Buy Now</button> &nbsp; &nbsp;
+             <button (click)="addtocart(productdata) " *ngIf="showadd" class="btn btn-success">Add to Cart</button>&nbsp;&nbsp;
+             <button (click)="removeitem(productdata) "*ngIf="showremove" class="btn btn-danger">Remove Item</button>
+
+        </div>
+        
+        
+        </div>
+   
+    <!-- right-side -->
+       <div class="col-sm-8">
+          <div>
+            <h1><i>{{productdata?.title}}</i></h1>
+            <p style="color: green;">Specific price</p>
+            <h3>${{productdata?.price}}</h3>
+            <strong> category:&nbsp; {{productdata?.category}}</strong><br>
+            <strong>Description:</strong><br>
+            <p>{{productdata?.description}}</p>
+            <p style="color:green;">Discount:{{productdata?.discountPercentage}}%</p><br>
+            <strong>Stocks available: {{productdata?.stock}}</strong>
+            <button routerLink="/" class="btn btn-waring text-light mt-2">Back</button>
+          </div>
+            </div>
+        </div>
+  </div>
